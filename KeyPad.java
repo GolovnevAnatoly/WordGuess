@@ -49,7 +49,8 @@ public class KeyPad extends JPanel implements ActionListener{
 		JPanel restButtons = new JPanel();
 			restButtons.setLayout(new BorderLayout());
 			randomLetter.addActionListener(this);
-			randomLetter.setBackground(new Color(173,216,230)); randomLetter.setForeground(new Color(70,70,70));
+			randomLetter.setBackground(new Color(173,216,230));
+			randomLetter.setForeground(new Color(70,70,70));
 			restButtons.add(randomLetter, BorderLayout.CENTER);
 			restButtons.add(buttons[NLETTERS-6], BorderLayout.WEST);
 			restButtons.add(buttons[NLETTERS-4], BorderLayout.EAST);
