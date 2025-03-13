@@ -39,9 +39,9 @@ public class WordGuessGame{
 	public char randomLetter(){
 		int pos = (int)(Math.random()*lettersLeft)+1;
 		int at =0, i=0;
-		while(at<pos)
-			if(wordB.charAt(i)!='.')
-				{at++; i++;}
+		while(at<pos){
+			if(wordB.charAt(i)!='.') at++;
+				i++;}
 		i--;
 		if(wordB.charAt(i)=='Ё')
 			return 'Е';
