@@ -75,7 +75,7 @@ public class WordGuessWindow extends JFrame implements KeyPadClient, ActionListe
 				output[i].setPreferredSize(new Dimension(40, 40));
 					out.add(output[i]);
 			}//for i
-	return out;		
+		return out;		
 	}//buildOutputArea
 
 	public void openRandomLetter(){//игрок открывает случайную букву, но теряет ход.
