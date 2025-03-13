@@ -30,19 +30,23 @@ public class WordGuessGame{
 	
 	public int findLetter(char ch, int from){
 		int at = word.indexOf(ch,from);
-		if(at!=-1){lettersLeft--; wordB.setCharAt(at,'.');}//если буква уже угадана, ее надо убрать/заменить.
+		if(at!=-1)
+			{lettersLeft--;
+			 wordB.setCharAt(at,'.');}//если буква уже угадана, ее надо убрать/заменить.
 		return at;
-	}
+	}//findLetter
 	
 	public char randomLetter(){
 		int pos = (int)(Math.random()*lettersLeft)+1;
 		int at =0, i=0;
-		while(at<pos){if(wordB.charAt(i)!='.')at++; i++;}
+		while(at<pos)
+			if(wordB.charAt(i)!='.')
+				{at++; i++;}
 		i--;
-		if(wordB.charAt(i)=='Ё') return 'Е';
-		//return Character.toString(wordB.charAt(i));
+		if(wordB.charAt(i)=='Ё')
+			return 'Е';
 		return wordB.charAt(i);
-	}
+	}//randomLetter
 	
 	private String randomWord(){
 		//выбираю одно слово из файла "dictionary.txt".
@@ -65,6 +69,6 @@ public class WordGuessGame{
 		catch (IOException e){
 				javax.swing.JOptionPane.showMessageDialog(null, "IOERROR: " + e.getMessage() + "\n","Проблемка",
 				JOptionPane.ERROR_MESSAGE);return "СЛОВО";}
-		}
+	}//randomWord
 	
 }//class
