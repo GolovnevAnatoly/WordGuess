@@ -38,18 +38,17 @@ public class Prompt extends JFrame implements FocusListener{
 			enter.setAlignmentX(Component.CENTER_ALIGNMENT);
 			myPanel.add(enter);
 		JPanel names = new JPanel();
-			for(int i=0;i<players.length;i++){
+			for(int i=0;i<players.length;i++)
 				names.add(players[i]);
-			}
 			myPanel.add(names);
 
-      int result = JOptionPane.showConfirmDialog(null, myPanel, "Имена игроков", JOptionPane.OK_CANCEL_OPTION);
-      if (result == JOptionPane.OK_OPTION) {
-         for(int i=0;i<players.length;i++)
-			if(players[i].getText()!=null && players[i].getText().length()!=0)
-				args[i] = players[i].getText();
-      } else
-		 System.exit(0);
+		 int result = JOptionPane.showConfirmDialog(null, myPanel, "Имена игроков", JOptionPane.OK_CANCEL_OPTION);
+		 if (result == JOptionPane.OK_OPTION) {
+			 for(int i=0;i<players.length;i++)
+				if(players[i].getText()!=null && players[i].getText().length()!=0)
+					args[i] = players[i].getText();
+		 } else
+		 	System.exit(0);
 		
 	}//constructor
 	
@@ -58,9 +57,9 @@ public class Prompt extends JFrame implements FocusListener{
 			ref.setText("");
 			ref.setForeground(focused);
 			ref.setFont(norm);
-    }
+	}//focusGained
 
-    public void focusLost(FocusEvent e) {//если новое имя не введено, то отображается имя по умолчанию из аргумента конструктора.
+	public void focusLost(FocusEvent e) {//если новое имя не введено, то отображается имя по умолчанию из аргумента конструктора.
 		JTextField ref = (JTextField)e.getSource();
 		if(ref.getText().equals("")){
 			for(int i=0;i<players.length;i++){
@@ -72,7 +71,7 @@ public class Prompt extends JFrame implements FocusListener{
 				}//if
 			}//for i
 		}//if
-	}
+	}//focusLost
 	
 	
 }//class
